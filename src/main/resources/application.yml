@@ -1,2 +1,17 @@
 server:
   port: 8888
+  servlet:
+    context-path: /sell #配置访问路径为 http://localhost:8888/sell/xxxx
+spring:
+  druid:
+    url: jdbc:mysql://192.168.1.164:3306/sell?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT
+    druidClass: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    maxActive: 30 #最大连接数
+    maxWait: 10000 #最大等待时间
+  jpa:
+    show-sql: true  #现实sql语句
+  jackson:
+    default-property-inclusion: non_null #返回json时 忽略null
+    date-format: yyyy-MM-hh HH-mm-ss #日期格式化标准
